@@ -1,5 +1,6 @@
 import React from 'react';
-import logo from './logo.svg';
+import logo from '../../logo.svg';
+import Basic from '../basic/Basic';
 import './App.css';
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
       </header>
       <main className="Main">
         <h1>Formik Tutorial</h1>
+        <Basic />
       </main>
     </div>
   );
