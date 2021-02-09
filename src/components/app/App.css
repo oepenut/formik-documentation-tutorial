@@ -30,6 +30,11 @@
   margin: 10px;
 }
 
+.Components {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
