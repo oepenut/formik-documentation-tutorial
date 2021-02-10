@@ -2,6 +2,7 @@ import React from 'react';
 import logo from '../../logo.svg';
 import Basic from '../basic/Basic';
 import BasicReduced from '../basic/BasicReduced';
+import Form from '../form/Form';
 import './App.css';
 
 function App() {
@@ -12,11 +13,13 @@ function App() {
         <h3>Welcome! Formik</h3>
       </header>
       <main className="Main">
-        <h1>Formik Tutorial</h1>
+        <h1>Formik Basics</h1>
         <div className="Components">
           <Basic />
           <BasicReduced />
         </div>
+        <h1>Formik Tutorial</h1>
+        <Form />
       </main>
     </div>
   );
