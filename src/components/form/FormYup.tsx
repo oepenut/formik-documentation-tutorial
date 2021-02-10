@@ -10,7 +10,7 @@ type Values = {
 
 const initialValuesEmpty: Values = { firstName: '', lastName: '', email: '' };
 
-const Form = () => {
+const FormYup = () => {
   const formik = useFormik({
     initialValues: initialValuesEmpty,
     validationSchema: Yup.object({
@@ -71,4 +71,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default FormYup;
