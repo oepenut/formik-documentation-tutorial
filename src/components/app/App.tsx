@@ -5,6 +5,8 @@ import BasicReduced from '../basic/BasicReduced';
 import Form from '../form/Form';
 import FormYup from '../form/FormYup';
 import FormYupReduced from '../form/FormYupReduced';
+import FormFormik from '../form/FormFormik';
+import FormUseField from '../form/FormUseField';
 import './App.css';
 
 function App() {
@@ -29,6 +31,10 @@ function App() {
         <h3>Yup Reduced</h3>
         <div className="Components">
           <FormYupReduced />
+        </div>
+        <div className="Components">
+          <FormFormik />
+          <FormUseField />
         </div>
       </main>
     </div>
