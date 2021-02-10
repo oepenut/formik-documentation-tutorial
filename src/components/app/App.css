@@ -33,6 +33,9 @@
 .Components {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  padding-bottom: 50px;
+  border-bottom: 3px solid #282c34;
+  margin-bottom: 50px;
 }
 
 @keyframes App-logo-spin {
