@@ -7,10 +7,11 @@ type Values = {
   email: string;
 };
 
-const initialValues = { firstName: '', lastName: '', email: '' };
+const initialValuesEmpty = { firstName: '', lastName: '', email: '' };
 
-const validate = (values: Values): Values => {
-  const errors: Values = initialValues;
+const validate = (values: Values): Partial<Values> => {
+  const errors: Partial<Values> | undefined = {};
+
   if (!values.firstName) {
     errors.firstName = 'Required';
   } else if (values.firstName.length > 15) {
@@ -34,7 +35,7 @@ const validate = (values: Values): Values => {
 
 const Form = () => {
   const formik = useFormik({
-    initialValues: initialValues,
+    initialValues: initialValuesEmpty,
     validate,
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
@@ -50,8 +51,11 @@ const Form = () => {
         id="firstName"
         value={formik.values.firstName}
         onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
       />
-      {formik.errors.firstName ? <div>{formik.errors.firstName}</div> : null}
+      {formik.touched.firstName && formik.errors.firstName ? (
+        <div>{formik.errors.firstName}</div>
+      ) : null}
       <label htmlFor="lastName">Last Name:</label>
       <input
         type="text"
@@ -59,8 +63,11 @@ const Form = () => {
         id="lastName"
         value={formik.values.lastName}
         onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
       />
-      {formik.errors.lastName ? <div>{formik.errors.lastName}</div> : null}
+      {formik.touched.lastName && formik.errors.lastName ? (
+        <div>{formik.errors.lastName}</div>
+      ) : null}
       <label htmlFor="email">Email Address</label>
       <input
         id="email"
@@ -68,8 +75,11 @@ const Form = () => {
         type="email"
         onChange={formik.handleChange}
         value={formik.values.email}
+        onBlur={formik.handleBlur}
       />
-      {formik.errors.email ? <div>{formik.errors.email}</div> : null}
+      {formik.touched.email && formik.errors.email ? (
+        <div>{formik.errors.email}</div>
+      ) : null}
       <br />
       <button type="submit">Submit</button>
     </form>
